@@ -16,9 +16,14 @@
 
 package com.example.leetcode.demos.web;
 
+import lombok.Data;
+import org.springframework.stereotype.Component;
+
 /**
  * @author <a href="mailto:chenxilzx1@gmail.com">theonefx</a>
  */
+@Data
+@Component
 public class User {
 
     private String name;

@@ -1,0 +1,19 @@
+/* 针对右侧边栏的结构 */
+.workspace-leaf:has(.outline-pane) {
+    /* 设置默认宽度为一个很小的值，实现隐藏 */
+    width: 0 !important;
+    transition: width 0.3s ease-in-out; /* 添加平滑过渡效果 */
+    overflow: hidden;
+}
+
+/* 鼠标悬停时，展开侧边栏 */
+.workspace-leaf:has(.outline-pane):hover {
+    /* 设置展开后的宽度，例如 300px */
+    width: 300px !important;
+    overflow: auto; /* 允许滚动 */
+}
+
+/* 确保右侧面板的内容不被压缩 */
+.workspace-split.mod-horizontal > .workspace-leaf:has(.outline-pane) {
+    min-width: 0 !important;
+}

@@ -1,0 +1,26 @@
+package com.example.leetcode.demos.leetcode.lc160;
+
+import com.example.leetcode.demos.leetcode.model.ListNode;
+
+public class Lc21Merge {
+
+    public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+        ListNode dmy = new ListNode(0);
+        ListNode cur = dmy;
+
+        while (list1 != null && list2 != null) {
+            if (list1.val < list2.val) {
+                cur.next = list1;
+                list1 = list1.next;
+            } else {
+                cur.next = list2;
+                list2 = list2.next;
+            }
+            cur = cur.next;
+        }
+
+        cur.next = list1 == null ? list2 : list1;
+
+        return dmy.next;
+    }
+}
